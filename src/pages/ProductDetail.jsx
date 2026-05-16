@@ -1,23 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProducts } from '../context/ProductContext'
+import useFetch from '../hooks/useFetch'
 
 function ProductDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { updateProduct, deleteProduct } = useProducts()
-  const [product, setProduct] = useState(null)
+  const { data: product, loading, error } = useFetch(`http://localhost:3001/products/${id}`)
   const [editMode, setEditMode] = useState(false)
-  const [editData, setEditData] = useState({})
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/products/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        setProduct(data)
-        setEditData({ price: data.price, stock: data.stock })
-      })
-  }, [id])
+  const [editData, setEditData] = useState({ price: "", stock: "" })
 
   async function handleUpdate() {
     const response = await fetch(`http://localhost:3001/products/${id}`, {
@@ -30,8 +22,8 @@ function ProductDetail() {
     })
     const updated = await response.json()
     updateProduct(Number(id), updated)
-    setProduct(updated)
     setEditMode(false)
+    navigate("/products")
   }
 
   async function handleDelete() {
@@ -42,7 +34,9 @@ function ProductDetail() {
     navigate("/products")
   }
 
-  if (!product) return <p>Loading...</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
+  if (!product) return <p>Product not found</p>
 
   return (
     <div>
@@ -74,7 +68,10 @@ function ProductDetail() {
         <div>
           <p>Price: ${product.price.toLocaleString()}</p>
           <p>Stock: {product.stock}</p>
-          <button onClick={() => setEditMode(true)}>Edit</button>
+          <button onClick={() => {
+            setEditData({ price: product.price, stock: product.stock })
+            setEditMode(true)
+          }}>Edit</button>
           <button onClick={handleDelete}>Delete</button>
         </div>
       )}
