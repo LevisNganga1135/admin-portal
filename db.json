@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Lamborghini Huracan",
-      "price": 248000,
-      "stock": 3,
-      "category": "Lamborghini"
-    },
-    {
       "id": "2",
       "name": "Ferrari 488 GTB",
       "price": 330000,
