@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
+import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/products" element={<div>Products Page</div>} />
+        <Route path="/products" element={<ProductPage/>} />
         <Route path="/add" element={<div>Add Product</div>} />
         <Route path="/product/:id" element={<div>Product Detail</div>} />
       </Routes>
