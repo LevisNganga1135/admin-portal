@@ -6,6 +6,8 @@ import { ProductProvider } from './context/ProductContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <ProductProvider>
+      <App />
+    </ProductProvider>
+  </StrictMode>
 )
