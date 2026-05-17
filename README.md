@@ -28,8 +28,7 @@ A React-based administrator portal for a supercar e-commerce store. Built as a s
 
 ##  Project Structure
 ---
-
-##  Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js v18+
@@ -47,24 +46,16 @@ cd admin-portal
 # Install dependencies
 npm install
 ```
-
 ### Running the App
 
-You need two terminals running simultaneously:
-
-**Terminal 1 — Start the mock backend:**
-```bash
-npm run server
-```
-
-**Terminal 2 — Start the React app:**
 ```bash
 npm run dev
 ```
 
 Then visit `http://localhost:5173` in your browser.
 
----
+> The backend is hosted on Railway — no local server needed!
+
 
 ##  Running Tests
 
