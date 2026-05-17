@@ -10,7 +10,7 @@ describe('useFetch', () => {
       json: async () => ({ id: 1, name: 'Lamborghini Huracan' })
     })
 
-    const { result } = renderHook(() => useFetch('http://localhost:3001/products/1'))
+    const { result } = renderHook(() => useFetch('https://supercar-backend-production.up.railway.app/products/1'))
 
     await waitFor(() => expect(result.current.loading).toBe(false))
     expect(result.current.data).toEqual({ id: 1, name: 'Lamborghini Huracan' })
@@ -22,7 +22,7 @@ describe('useFetch', () => {
       json: async () => ({})
     })
 
-    const { result } = renderHook(() => useFetch('http://localhost:3001/products/99'))
+    const { result } = renderHook(() => useFetch('https://supercar-backend-production.up.railway.app/products/99'))
 
     await waitFor(() => expect(result.current.loading).toBe(false))
     expect(result.current.error).toBe('Failed to fetch')

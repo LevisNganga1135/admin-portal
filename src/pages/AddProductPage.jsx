@@ -42,7 +42,7 @@ function AddProductPage() {
       return
     }
     // POST request - add new product to json-server
-    const response = await fetch("http://localhost:3001/products", {
+    const response = await fetch("https://supercar-backend-production.up.railway.app/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

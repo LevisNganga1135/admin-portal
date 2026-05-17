@@ -18,7 +18,7 @@ function ProductPage() {
 
   useEffect(() => {
     // GET request - fetch all products from json-server
-    fetch("http://localhost:3001/products")
+    fetch("https://supercar-backend-production.up.railway.app/products")
       .then(res => res.json())
       .then(data => {
         console.log("products fetched:", data)

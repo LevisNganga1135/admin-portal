@@ -13,13 +13,13 @@ function ProductDetail() {
   const navigate = useNavigate()
   const { updateProduct, deleteProduct } = useProducts()
   // Use custom useFetch hook to load product data
-  const { data: product, loading, error } = useFetch(`http://localhost:3001/products/${id}`)
+  const { data: product, loading, error } = useFetch(`https://supercar-backend-production.up.railway.app/products/${id}`)
   const [editMode, setEditMode] = useState(false)
   const [editData, setEditData] = useState({ price: "", stock: "" })
 
   // PATCH request - update price and stock
   async function handleUpdate() {
-    const response = await fetch(`http://localhost:3001/products/${id}`, {
+    const response = await fetch(`https://supercar-backend-production.up.railway.app/products/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -35,7 +35,7 @@ function ProductDetail() {
 
   // DELETE request - remove product
   async function handleDelete() {
-    await fetch(`http://localhost:3001/products/${id}`, {
+    await fetch(`https://supercar-backend-production.up.railway.app/products/${id}`, {
       method: "DELETE"
     })
     deleteProduct(Number(id))
