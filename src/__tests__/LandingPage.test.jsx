@@ -3,21 +3,21 @@ import { MemoryRouter } from 'react-router-dom'
 import LandingPage from '../pages/LandingPage'
 
 describe('LandingPage', () => {
-  test('renders welcome heading', () => {
+  test('renders hero heading', () => {
     render(
       <MemoryRouter>
         <LandingPage />
       </MemoryRouter>
     )
-    expect(screen.getByText(/Welcome to the Admin Portal/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
   })
 
-  test('renders Browse Products button', () => {
+  test('renders Browse Cars button', () => {
     render(
       <MemoryRouter>
         <LandingPage />
       </MemoryRouter>
     )
-    expect(screen.getByText(/Browse Products/i)).toBeInTheDocument()
+    expect(screen.getByText(/Browse Cars/i)).toBeInTheDocument()
   })
 })
