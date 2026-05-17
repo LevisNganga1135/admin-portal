@@ -1,0 +1,52 @@
+/* Add product page - centered form layout */
+.add-product-page {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Page heading */
+.add-product-page h1 {
+  margin-bottom: 40px;
+}
+
+/* Form group - stacked label and input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+/* Input spacing inside form group */
+.form-group input {
+  margin-top: 4px;
+}
+
+/* Validation error message */
+.error {
+  color: #e50000;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Submit button - full width and larger */
+.add-product-page button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+/* Image preview container */
+.image-preview {
+  margin-bottom: 24px;
+  border: 1px solid #333333;
+}
+
+/* Image preview - fixed height */
+.image-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}

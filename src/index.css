@@ -1,0 +1,82 @@
+/* Global styles - Dark luxury theme for supercar admin portal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main body - dark background for luxury feel */
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+/* Main headings - bold and uppercase for impact */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Sub headings */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Section headings - red accent color */
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e50000;
+}
+
+/* Global button styles - red with uppercase text */
+button {
+  background-color: #e50000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Button hover - slightly lighter red */
+button:hover {
+  background-color: #ff2020;
+}
+
+/* Global input styles - dark background with subtle border */
+input {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Input focus - red border to match theme */
+input:focus {
+  border-color: #e50000;
+}
+
+/* Global label styles - muted uppercase text */
+label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  display: block;
+  margin-bottom: 6px;
+}

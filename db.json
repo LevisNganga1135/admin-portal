@@ -1,39 +1,52 @@
 {
   "products": [
     {
+      "id": "1",
+      "name": "Lamborghini Huracan",
+      "price": 248000,
+      "stock": 3,
+      "category": "Lamborghini",
+      "image": "https://www.thedrive.com/wp-content/uploads/images-by-url-td/content/2021/09/IMG_2919-1.jpg?quality=85"
+    },
+    {
       "id": "2",
       "name": "Ferrari 488 GTB",
       "price": 330000,
-      "stock": 5,
-      "category": "Ferrari"
+      "stock": 2,
+      "category": "Ferrari",
+      "image": "https://www.pushstart.it/it/test-drive/ferrari-488-gtb/images/ferrari-488-gtb-tre-quarti-anteriore-belvedere-panorama-c_hu_2c0afa4cac730dfb.JPG"
     },
     {
       "id": "3",
       "name": "Bugatti Chiron",
       "price": 3000000,
       "stock": 1,
-      "category": "Bugatti"
+      "category": "Bugatti",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO1Q9-6phobfsHLiThj1RCjWMA08ibDhoujQ&s"
     },
     {
       "id": "4",
       "name": "McLaren 720S",
       "price": 299000,
       "stock": 4,
-      "category": "McLaren"
+      "category": "McLaren",
+      "image": "https://www.exoticcarhacks.com/wp-content/uploads/2024/04/oUqsIYLw.jpeg"
     },
     {
       "id": "5",
-      "name": "Porsche 911 GT3",
-      "price": 180000,
+      "name": "Porsche 911 GT3 RS",
+      "price": 250000,
       "stock": 6,
-      "category": "Porsche"
+      "category": "Porsche",
+      "image": "https://cdn-thumbs.ohmyprints.net/1/a4935345541c38e46f9ca9e8f202ffaa/817x600/thumbnail/fit.jpg"
     },
     {
-      "name": "Ferrari 812",
-      "price": 1245890,
+      "name": "G-Wagon",
+      "price": 545000,
       "stock": 2,
-      "category": "Ferrari",
-      "id": "0ihynMbOsbc"
+      "category": "Mercedes",
+      "image": "https://img.cdn.dragon2000.net/C3132/U1487/IMG_39229-large.jpg",
+      "id": "_5Wr9nJjJJw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

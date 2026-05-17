@@ -1,0 +1,78 @@
+/* Landing page - centered hero layout */
+.landing {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Hero heading */
+.landing h1 {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+/* Red accent on hero heading */
+.landing h1 span {
+  color: #e50000;
+}
+
+/* Hero subtitle */
+.landing p {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+/* Hero button - larger than default */
+.landing-btn {
+  padding: 14px 40px;
+  font-size: 1rem;
+  margin-bottom: 80px;
+}
+
+/* Feature cards container - responsive flex row */
+.features {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Individual feature card */
+.feature-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-top: 3px solid #e50000;
+  padding: 32px 24px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Feature card hover - lift effect */
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Feature card heading */
+.feature-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+/* Feature card description */
+.feature-card p {
+  color: #888888;
+  font-size: 0.9rem;
+  margin: 0;
+}

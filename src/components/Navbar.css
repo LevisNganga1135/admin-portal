@@ -1,0 +1,43 @@
+/* Navbar - sticky top bar with red bottom border */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #111111;
+  border-bottom: 2px solid #e50000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Brand/logo text */
+.navbar-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Navigation links container */
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+/* Individual nav links - muted by default */
+.navbar-links a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+/* Nav link hover - red accent */
+.navbar-links a:hover {
+  color: #e50000;
+}

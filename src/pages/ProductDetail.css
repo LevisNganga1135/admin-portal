@@ -1,0 +1,117 @@
+/* Product detail page - centered layout */
+.product-detail {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Car name heading */
+.product-detail h1 {
+  margin-bottom: 8px;
+}
+
+/* Category label - red accent */
+.product-detail .category {
+  color: #e50000;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+/* Detail image - wide and tall */
+.detail-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+
+/* Detail info card */
+.detail-info {
+  background-color: #111111;
+  border: 1px solid #222222;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+/* Info text - muted */
+.detail-info p {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  margin-bottom: 12px;
+}
+
+/* Price - large red text */
+.detail-info .price {
+  color: #e50000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Action buttons row */
+.detail-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Delete button - dark by default */
+.detail-buttons .delete-btn {
+  background-color: #333333;
+}
+
+/* Delete button hover - red warning */
+.detail-buttons .delete-btn:hover {
+  background-color: #e50000;
+}
+
+/* Edit form card */
+.edit-form {
+  background-color: #111111;
+  border: 1px solid #222222;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+/* Edit form group */
+.edit-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Edit form input spacing */
+.edit-form .form-group input {
+  margin-top: 4px;
+}
+
+/* Edit action buttons row */
+.edit-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Cancel button - dark */
+.edit-buttons .cancel-btn {
+  background-color: #333333;
+}
+
+/* Cancel button hover */
+.edit-buttons .cancel-btn:hover {
+  background-color: #555555;
+}
+
+/* Back button - transparent with border */
+.back-btn {
+  background-color: transparent;
+  border: 1px solid #333333;
+  color: #aaaaaa;
+  margin-top: 16px;
+}
+
+/* Back button hover */
+.back-btn:hover {
+  border-color: #e50000;
+  color: #ffffff;
+}

@@ -6,21 +6,18 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProducts } from '../context/ProductContext'
 import useFetch from '../hooks/useFetch'
+import './ProductDetail.css'
 
 function ProductDetail() {
-  // Get the product id from the URL params
   const { id } = useParams()
   const navigate = useNavigate()
-  // Access update and delete functions from global context
   const { updateProduct, deleteProduct } = useProducts()
   // Use custom useFetch hook to load product data
   const { data: product, loading, error } = useFetch(`http://localhost:3001/products/${id}`)
-  // Toggle between view and edit mode
   const [editMode, setEditMode] = useState(false)
-  // Store editable price and stock values
   const [editData, setEditData] = useState({ price: "", stock: "" })
 
-  // PATCH request - update price and stock in json-server
+  // PATCH request - update price and stock
   async function handleUpdate() {
     const response = await fetch(`http://localhost:3001/products/${id}`, {
       method: "PATCH",
@@ -31,38 +28,36 @@ function ProductDetail() {
       })
     })
     const updated = await response.json()
-    // Update global context with new values
     updateProduct(Number(id), updated)
     setEditMode(false)
     navigate("/products")
   }
 
-  // DELETE request - remove product from json-server
+  // DELETE request - remove product
   async function handleDelete() {
     await fetch(`http://localhost:3001/products/${id}`, {
       method: "DELETE"
     })
-    // Remove product from global context
     deleteProduct(Number(id))
     navigate("/products")
   }
 
-  // Show loading state while fetching
   if (loading) return <p>Loading...</p>
-  // Show error if fetch failed
   if (error) return <p>Error: {error}</p>
-  // Show message if product not found
   if (!product) return <p>Product not found</p>
 
   return (
-    <div>
+    <div className="product-detail">
       <h1>{product.name}</h1>
-      <p>Category: {product.category}</p>
+      <p className="category">{product.category}</p>
+
+      {/* Product image */}
+      <img src={product.image} alt={product.name} className="detail-image" />
 
       {/* Toggle between edit form and read only view */}
       {editMode ? (
-        <div>
-          <div>
+        <div className="edit-form">
+          <div className="form-group">
             <label>Price ($)</label>
             <input
               type="number"
@@ -70,7 +65,7 @@ function ProductDetail() {
               onChange={e => setEditData({ ...editData, price: e.target.value })}
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Stock</label>
             <input
               type="number"
@@ -78,24 +73,30 @@ function ProductDetail() {
               onChange={e => setEditData({ ...editData, stock: e.target.value })}
             />
           </div>
-          <button onClick={handleUpdate}>Save Changes</button>
-          <button onClick={() => setEditMode(false)}>Cancel</button>
+          <div className="edit-buttons">
+            <button onClick={handleUpdate}>Save Changes</button>
+            <button className="cancel-btn" onClick={() => setEditMode(false)}>Cancel</button>
+          </div>
         </div>
       ) : (
-        <div>
-          <p>Price: ${product.price.toLocaleString()}</p>
+        <div className="detail-info">
+          <p className="price">${product.price.toLocaleString()}</p>
           <p>Stock: {product.stock}</p>
-          {/* Pre-fill edit fields with current values */}
-          <button onClick={() => {
-            setEditData({ price: product.price, stock: product.stock })
-            setEditMode(true)
-          }}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          <div className="detail-buttons">
+            {/* Pre-fill edit fields with current values */}
+            <button onClick={() => {
+              setEditData({ price: product.price, stock: product.stock })
+              setEditMode(true)
+            }}>Edit</button>
+            <button className="delete-btn" onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       )}
 
       {/* Navigate back to products list */}
-      <button onClick={() => navigate("/products")}>Back to Products</button>
+      <button className="back-btn" onClick={() => navigate("/products")}>
+        ← Back to Products
+      </button>
     </div>
   )
 }
