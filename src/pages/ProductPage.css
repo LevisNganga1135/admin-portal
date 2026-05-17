@@ -1,0 +1,23 @@
+/* Product page styles */
+.product-page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-page h1 {
+  margin-bottom: 32px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}

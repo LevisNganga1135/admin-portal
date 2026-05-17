@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef, useId } from 'react'
 import { useProducts } from '../context/ProductContext'
 import ProductCard from '../components/ProductCard'
+import './ProductPage.css'
 
 function ProductPage() {
   // Access global products state and setter from context
@@ -34,22 +35,24 @@ function ProductPage() {
   )
 
   return (
-    <div>
+    <div className="product-page">
       <h1>Our Supercars</h1>
 
       {/* Accessible search input with label */}
-      <label htmlFor={inputId}>Search:</label>
-      <input
-        id={inputId}
-        ref={searchRef}
-        type="text"
-        placeholder="Search supercars..."
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-      />
+      <div className="search-bar">
+        <label htmlFor={inputId}>Search</label>
+        <input
+          id={inputId}
+          ref={searchRef}
+          type="text"
+          placeholder="Search supercars..."
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+        />
+      </div>
 
       {/* Render filtered product cards */}
-      <div>
+      <div className="products-grid">
         {filtered.map(p => (
           <ProductCard key={p.id} product={p} />
         ))}

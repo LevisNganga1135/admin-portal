@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useProducts } from '../context/ProductContext'
+import './AddProductPage.css'
 
 function AddProductPage() {
   // useNavigate for redirecting after form submission
@@ -15,7 +16,8 @@ function AddProductPage() {
     name: "",
     price: "",
     stock: "",
-    category: ""
+    category: "",
+    image: ""
   })
 
   // State to store validation error messages
@@ -64,10 +66,10 @@ function AddProductPage() {
   }
 
   return (
-    <div>
+    <div className="add-product-page">
       <h1>Add New Supercar</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>Name</label>
           <input
             name="name"
@@ -76,9 +78,9 @@ function AddProductPage() {
             placeholder="e.g. Lamborghini Urus"
           />
           {/* Show error if name is missing */}
-          {errors.name && <p>{errors.name}</p>}
+          {errors.name && <p className="error">{errors.name}</p>}
         </div>
-        <div>
+        <div className="form-group">
           <label>Price ($)</label>
           <input
             name="price"
@@ -88,9 +90,9 @@ function AddProductPage() {
             placeholder="e.g. 250000"
           />
           {/* Show error if price is invalid */}
-          {errors.price && <p>{errors.price}</p>}
+          {errors.price && <p className="error">{errors.price}</p>}
         </div>
-        <div>
+        <div className="form-group">
           <label>Stock</label>
           <input
             name="stock"
@@ -100,9 +102,9 @@ function AddProductPage() {
             placeholder="e.g. 5"
           />
           {/* Show error if stock is missing */}
-          {errors.stock && <p>{errors.stock}</p>}
+          {errors.stock && <p className="error">{errors.stock}</p>}
         </div>
-        <div>
+        <div className="form-group">
           <label>Category</label>
           <input
             name="category"
@@ -111,8 +113,27 @@ function AddProductPage() {
             placeholder="e.g. Lamborghini"
           />
           {/* Show error if category is missing */}
-          {errors.category && <p>{errors.category}</p>}
+          {errors.category && <p className="error">{errors.category}</p>}
         </div>
+
+           {/* Image URL field with preview */}
+        <div className="form-group">
+          <label>🖼 Image URL</label>
+          <input
+            name="image"
+            value={formData.image}
+            onChange={handleChange}
+            placeholder="Paste image address here"
+          />
+        </div>
+
+        {/* Show image preview if URL is entered */}
+        {formData.image && (
+          <div className="image-preview">
+            <img src={formData.image} alt="Preview" />
+          </div>
+        )}
+
         <button type="submit">Add Supercar</button>
       </form>
     </div>
@@ -120,3 +141,4 @@ function AddProductPage() {
 }
 
 export default AddProductPage
+

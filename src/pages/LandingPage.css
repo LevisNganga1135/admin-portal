@@ -1,0 +1,63 @@
+/* Landing page styles */
+.landing {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.landing h1 {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.landing h1 span {
+  color: #e50000;
+}
+
+.landing p {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.landing-btn {
+  padding: 14px 40px;
+  font-size: 1rem;
+  margin-bottom: 80px;
+}
+
+.features {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.feature-card {
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-top: 3px solid #e50000;
+  padding: 32px 24px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #888888;
+  font-size: 0.9rem;
+  margin: 0;
+}

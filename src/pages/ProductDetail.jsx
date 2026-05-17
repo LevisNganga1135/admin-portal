@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProducts } from '../context/ProductContext'
 import useFetch from '../hooks/useFetch'
+import './ProductDetail.css'
 
 function ProductDetail() {
   // Get the product id from the URL params
@@ -55,14 +56,18 @@ function ProductDetail() {
   if (!product) return <p>Product not found</p>
 
   return (
-    <div>
+    <div className="product-detail">
       <h1>{product.name}</h1>
-      <p>Category: {product.category}</p>
+      <p className="category">{product.category}</p>
+
+
+{/* Product image */}
+<img src={product.image} alt={product.name} className="detail-image" />
 
       {/* Toggle between edit form and read only view */}
       {editMode ? (
-        <div>
-          <div>
+        <div className="edit-form">
+          <div className="form-group">
             <label>Price ($)</label>
             <input
               type="number"
@@ -70,7 +75,7 @@ function ProductDetail() {
               onChange={e => setEditData({ ...editData, price: e.target.value })}
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Stock</label>
             <input
               type="number"
@@ -78,24 +83,30 @@ function ProductDetail() {
               onChange={e => setEditData({ ...editData, stock: e.target.value })}
             />
           </div>
-          <button onClick={handleUpdate}>Save Changes</button>
-          <button onClick={() => setEditMode(false)}>Cancel</button>
+          <div className="edit-buttons">
+            <button onClick={handleUpdate}>Save Changes</button>
+            <button className="cancel-btn" onClick={() => setEditMode(false)}>Cancel</button>
+          </div>
         </div>
       ) : (
-        <div>
-          <p>Price: ${product.price.toLocaleString()}</p>
+        <div className="detail-info">
+          <p className="price">${product.price.toLocaleString()}</p>
           <p>Stock: {product.stock}</p>
-          {/* Pre-fill edit fields with current values */}
-          <button onClick={() => {
-            setEditData({ price: product.price, stock: product.stock })
-            setEditMode(true)
-          }}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          <div className="detail-buttons">
+            {/* Pre-fill edit fields with current values */}
+            <button onClick={() => {
+              setEditData({ price: product.price, stock: product.stock })
+              setEditMode(true)
+            }}>Edit</button>
+            <button className="delete-btn" onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       )}
 
       {/* Navigate back to products list */}
-      <button onClick={() => navigate("/products")}>Back to Products</button>
+      <button className="back-btn" onClick={() => navigate("/products")}>
+        ← Back to Products
+      </button>
     </div>
   )
 }
